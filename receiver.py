@@ -33,7 +33,10 @@ class Receiver:
         totalData = []
         while True:
             channelData = self.channelToReceiver.recv()
-            
+            # extract data
+            summation = 0
+            for i in range(len(channelData)):
+            summation += channelData[i] * self.walshTable[self.senderToReceive][i]
             # extract data bit
             summation /= self.codeLength
             if summation == 1:
