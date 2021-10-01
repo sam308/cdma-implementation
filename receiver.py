@@ -13,7 +13,16 @@ class Receiver:
         self.channelToReceiver  = channelToReceiver
         self.senderToReceive    = self.selectSender()
         self.codeLength         = len(self.walshTable[0])
-
+        
+    def selectSender(self):
+        while(1):
+        s = int(input("SELECT A SENDER FOR RECEIVER {}: ".format(self.name+1)))
+        if(s<=0 or s>constants.TOT_SENDER):
+        print("INVALID SENDER SELECTED! TRY AGAIN")
+        else:
+        s = s - 1
+        break
+        return s
     
     def getCharacter(self, data):
         print("Data:" + str(data))
