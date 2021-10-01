@@ -14,6 +14,11 @@ def getNextPowerof2(num):
         power *= 2
     return power
 
+def  getPreviousPowerOf2(num):
+	ans = getNextPowerOf2(num)
+	ans = ans/2
+	return ans
+
 
 def buildWalshTable(length, i1,i2, j1,j2, isComplement):
     if length == 2:
