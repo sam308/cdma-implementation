@@ -13,6 +13,10 @@ class Sender:
         self.walshCode          = walshCode # tuple containg the walshCode
    
    
+    def openFile(self, sender):
+        file = open(constants.IN_FILE_PATH+'input'+str(sender+1)+'.txt', 'r')
+        return file
+    
     def fileLength(self, sender):
         path = constants.IN_FILE_PATH+'input'+str(sender+1)+'.txt'
         size = os.path.getsize(path)
