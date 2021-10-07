@@ -1,28 +1,22 @@
 '''File Generator Module'''
 
-
+# modify PATH variable according to the filepath you want generate files in
 PATH = "./textfiles/input/input"
 
 file_no = int(input('Enter Number of Files : '))
 msg = input('Enter text : ')
+print('Length of text is {}'.format(len(msg)))
+
 
 def generate_files(num):
     '''Function for generating files'''
     while num:
-        with open(PATH + str(num) + '.txt', 'w', encoding='utf-8') as fptr: fptr.write(msg)
+        with open(PATH + str(num) + '.txt', 'w', encoding='utf-8') as fptr:
+            fptr.write(msg)
         num -= 1
-    print('Done!')
+    print('Done! {} Files were created with "{}" written in each of them!'.format(file_no, msg))
 
 
-# if len(msg) == 15 or len(msg) == 30 or len(msg) == 50: generate_files(file_no)
-if len(msg) in (15, 30, 50): generate_files(file_no)
-else:
-    consent = input("Not Desired Length. Still Want to Write? (y/N): ")
-    # if consent == 'y' or consent == 'Y': generate_files(file_no)
-    if consent in ('y', 'Y'): generate_files(file_no)
-    else: print('Nothing Written!')
-
-
-# 50 => THIS IS THE RUNNING HEAD IN UP TO FIFTY CHARACTERS
-# 30 => THE IRREGULAR MOVE CANNOT LOSE
-# 15 => I'M ATANU GHOSH
+ask = input('Are you sure to generate {} files? (y/N): '.format(file_no))
+if ask in ('y', 'Y'): generate_files(file_no)
+else: print('You chose not to generate any files!')
