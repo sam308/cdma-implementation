@@ -2,8 +2,6 @@
 
 Walsh encoded CDMA multiple access technique.
 
-<hr>
-
 
 ## How to simulate this project:
 
